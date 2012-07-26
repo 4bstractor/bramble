@@ -8,18 +8,18 @@
 </head>
 <body>
   <div id="comm">
-    <% if user_signed_in? %>
+    <% if current_user %>
       Signed in as <%= current_user.email %>. Not You?
-      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "brutton" %>
+      <%= link_to "Sign Out", sign_out_path, :method => :delete, :class => "brutton" %>
     <% else %>
-      <%= link_to "Sign Up", new_user_registration_path, :class => "brutton" %> <%= link_to "Sign In", new_user_session_path, :class => "brutton" %>
+      <%= link_to "Sign Up", sign_up_path, :class => "brutton" %> <%= link_to "Sign In", sign_in_path, :class => "brutton" %>
     <% end %>
     
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
   </div>
-  <!--<%#TODO: Add button styles, change the formatting for the top and bottom bars -->
+  <!--TODO: Add button styles, change the formatting for the top and bottom bars -->
   
   <br/>
   

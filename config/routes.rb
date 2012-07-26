@@ -1,14 +1,17 @@
 Bramble::Application.routes.draw do
-  get "worp/index"
+  get '/sign_in' => 'sessions#new', :as => 'sign_in'
+	get '/sign_up' => 'users#new', :as => 'sign_up'
+	get '/sign_out' => 'sessions#destroy', :as => 'sign_out'
+	
+	match '/sessions' => 'sessions#create', :as => 'sessions'
+  match '/users' => 'users#create', :as => 'users'
 
-  devise_for :users
-  
-  resources :stories
-  
-  root :to => "worp#index"
+	# resources :users
+	# resources :sessions
+	resources :stories
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -53,9 +56,13 @@ Bramble::Application.routes.draw do
   #     resources :products
   #   end
 
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => 'stories#index'
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id))(.:format)'
 end

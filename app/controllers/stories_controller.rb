@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_filter :authenticate_user!, :except => [ :index, :show ]
+  # skip_before_filter :authenticate!, :only => [:index, :show]
   # GET /stories
   # GET /stories.xml
   def index
@@ -42,6 +42,7 @@ class StoriesController < ApplicationController
   # POST /stories.xml
   def create
     @story = Story.new(params[:story])
+		current_user.stories << @story
 
     respond_to do |format|
       if @story.save
