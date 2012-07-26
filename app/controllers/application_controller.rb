@@ -6,9 +6,7 @@ class ApplicationController < ActionController::Base
 	private
 
 	def authenticate!
-	  unless current_user
-	    redirect_to sign_in_url, :notice => "You Need To Sign In"
-		end
+	  redirect_to(sign_in_url) unless current_user
 	end
 
 	def current_user
