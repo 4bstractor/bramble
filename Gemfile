@@ -23,8 +23,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
+# Use thin for development and test
 gem 'thin'
-# Use unicorn as the app server
+# Use puma for production
 gem 'puma'
 
 # Deploy with Capistrano
