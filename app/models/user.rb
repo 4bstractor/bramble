@@ -14,18 +14,13 @@ class User < ActiveRecord::Base
 
   has_many :stories
 
-  def self.authenticate(username, password)
-    user = find_by_identifier(username)
-    if user && user.hashed_password = BCrypt::Engine.hash_secret(password, user.salt)
-      user
-    else
-      nil
-    end
-  end
-
   # Scope to find a user by either identifier
   def self.find_by_identifier(identifier)
     where("username = ? OR email = ?", identifier, identifier).first
+  end
+
+  def authenticate(password)
+    hashed_password == BCrypt::Engine.hash_secret(password, salt)
   end
 
   private
