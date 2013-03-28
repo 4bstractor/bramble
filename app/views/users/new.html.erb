@@ -11,23 +11,11 @@
 			</ul>
 		</div>
 	<% end %>
-	<div class="field">
-	  <%= f.label :username %><br/>
-	  <%= f.text_field :username %>
-	</div>
+	<div class="field"><%= f.text_field :username, :placeholder => "Username" %></div>
 	OR
-	<div class="field">
-	  <%= f.label :email %><br/>
-	  <%= f.text_field :email %>
-	</div>
-	<div class="field">
-	  <%= f.label :password %><br/>
-	  <%= f.password_field :password %>
-	</div>
-	<div class="field">
-	  <%= f.label :password_confirmation %><br/>
-	  <%= f.password_field :password_confirmation %>
-	</div>
+	<div class="field"><%= f.text_field :email, :placeholder => "Email" %></div>
+	<div class="field"><%= f.password_field :password, :placeholder => "Password" %></div>
+	<div class="field"><%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %></div>
+	<div class="field"><%= f.text_field :quote, :placeholder => "Quote" %></div>
 	<div class="actions"><%= f.submit %></div>
-	<div class="actions"><%= link_to "Sign In", sign_in_path %></div>
 <% end %>

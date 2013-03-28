@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>Bramble</title>
-  <%= stylesheet_link_tag 'bramble' %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
   <div id="comm">
@@ -14,21 +14,21 @@
     <% else %>
       <%= link_to "Sign Up", sign_up_path, :class => "brutton" %> <%= link_to "Sign In", sign_in_path, :class => "brutton" %>
     <% end %>
-    
+
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
   </div>
   <!--TODO: Add button styles, change the formatting for the top and bottom bars -->
-  
+
   <br/>
-  
+
   <div id="page">
     <%= yield %>
   </div>
-  
+
   <br/>
-  
+
   <div id="footer">
     <%= link_to "Home", root_path, :class => "brutton" %>
   </div>

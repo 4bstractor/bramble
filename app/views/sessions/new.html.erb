@@ -1,14 +1,8 @@
 <h1>Sign In</h1>
 
 <%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %><br/>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
-  </div>
+  <div class="field"><%= text_field_tag :identifier, params[:identifier], :placeholder => "Username Or Email" %></div>
+  <div class="field"><%= password_field_tag :password, nil, :placeholder => "Password" %></div>
+  <!-- #TODO: Make a new button for these actions -->
   <div class="actions"><%= submit_tag "Sign In" %></div>
-	<div class="actions"><%= link_to "Sign Up", sign_up_path %></div>
 <% end %>
