@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726052535) do
+ActiveRecord::Schema.define(:version => 20130328212449) do
 
   create_table "pieces", :force => true do |t|
     t.text     "text"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120726052535) do
     t.string   "salt"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "auth_token"
   end
 
 end
