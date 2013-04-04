@@ -6,6 +6,15 @@ gem 'pg'
 
 gem 'machinist'
 
+gem 'jquery-rails'
+
+# Use thin for development and test
+gem 'thin'
+# Use puma for production
+gem 'puma'
+# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '~> 3.0.0'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -15,18 +24,14 @@ group :assets do
   # Add js runtime gem here if needed
 end
 
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+# Gems used only in development
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
-
-# Use thin for development and test
-gem 'thin'
-# Use puma for production
-gem 'puma'
 
 # Deploy with Capistrano
 # gem 'capistrano'
