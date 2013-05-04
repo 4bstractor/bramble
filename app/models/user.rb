@@ -25,6 +25,13 @@ class User < ActiveRecord::Base
     hashed_password == BCrypt::Engine.hash_secret(password, salt)
   end
 
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    UserMailer.password_reset(self).deliver
+  end
+
   private
 
   # Generate a unique random token for 'column' field

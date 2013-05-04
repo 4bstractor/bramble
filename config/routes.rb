@@ -1,4 +1,6 @@
 Bramble::Application.routes.draw do
+  get "password_resets/new"
+
   # Authentication routes
   get 'sign_in' => 'sessions#new', as: 'sign_in'
 	get 'sign_up' => 'users#new', as: 'sign_up'
@@ -9,6 +11,7 @@ Bramble::Application.routes.draw do
   get 'users/me' => 'users#me', as: 'my'
 
 	resources :stories
+  resources :password_resets
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
