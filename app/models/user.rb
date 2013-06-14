@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true
 
   has_many :stories
+  has_many :members
+  has_many :member_of_stories, :through => :members, :source => :story
 
   # Scope to find a user by either identifier
   def self.find_by_identifier(identifier)
