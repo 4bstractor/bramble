@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   before_save :hash_password
   before_create { generate_token(:auth_token) }
 
-  validates_confirmation_of :password
   validates :password, :presence => { :on => :create }, :confirmation => true
   validates :username, :presence => true, :uniqueness => true
   validates :email, :uniqueness => true
