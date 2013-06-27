@@ -28,6 +28,9 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'awesome_print'
+  gem 'wirb'
+  gem 'faker'
 end
 
 # To use Jbuilder templates for JSON
