@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   before_save :hash_password
   before_create { generate_token(:auth_token) }
+  before_create { generate_token(:access_token) }
 
   validates :password, :presence => { :on => :create }, :confirmation => true
   validates :username, :presence => true, :uniqueness => true
@@ -36,6 +37,11 @@ class User < ActiveRecord::Base
   # Resets the auth token so that it cannot be used by someone else after logout
   def refresh_auth_token
     generate_token(:auth_token)
+    save!
+  end
+
+  def regenerate_access_token
+    generate_token(:access_token)
     save!
   end
 
