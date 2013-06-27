@@ -3,15 +3,19 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-	private
+  private
 
-	def authenticate!
-	  redirect_to(sign_in_url) unless current_user
-	end
+  def authenticate!
+    redirect_to(sign_in_url) unless current_user
+  end
 
-	def current_user
-	  @current_user ||= User.find_by_auth_token(cookies[:auth_token]) if cookies[:auth_token]
-	end
+  def current_user
+    if params[:access_token]
+      @current_user ||= User.find_by_access_token(params[:access_token])
+    else
+      @current_user ||= User.find_by_auth_token(cookies[:auth_token]) if cookies[:auth_token]
+    end
+  end
 
-	helper_method :current_user
+  helper_method :current_user
 end

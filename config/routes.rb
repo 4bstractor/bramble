@@ -3,15 +3,23 @@ Bramble::Application.routes.draw do
 
   # Authentication routes
   get 'sign_in' => 'sessions#new', as: 'sign_in'
-	get 'sign_up' => 'users#new', as: 'sign_up'
-	delete 'sign_out' => 'sessions#destroy', as: 'sign_out'
-	post 'sessions' => 'sessions#create', as: 'sessions'
+  get 'sign_up' => 'users#new', as: 'sign_up'
+  delete 'sign_out' => 'sessions#destroy', as: 'sign_out'
+  post 'sessions' => 'sessions#create', as: 'sessions'
   post 'users' => 'users#create', as: 'users'
   # Users profile action
   get 'users/me' => 'users#me', as: 'my'
 
-	resources :stories
+  resources :stories
   resources :password_resets
+
+  namespace :api do
+    namespace :v1 do
+      post 'users' => 'users#create', as: 'sign_up'
+      post 'sessions' => 'sessions#create', as: 'sign_in'
+      delete 'sessions' => 'sessions#destroy', as: 'sign_out'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
