@@ -33,6 +33,12 @@ class User < ActiveRecord::Base
     UserMailer.password_reset(self).deliver
   end
 
+  # Resets the auth token so that it cannot be used by someone else after logout
+  def refresh_auth_token
+    generate_token(:auth_token)
+    save!
+  end
+
   private
 
   # Generate a unique random token for 'column' field
