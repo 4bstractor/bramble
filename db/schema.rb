@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504001328) do
+ActiveRecord::Schema.define(:version => 20130614201451) do
+
+  create_table "members", :force => true do |t|
+    t.integer "user_id"
+    t.integer "story_id"
+  end
 
   create_table "pieces", :force => true do |t|
     t.text     "text"
@@ -23,9 +28,12 @@ ActiveRecord::Schema.define(:version => 20130504001328) do
 
   create_table "stories", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "user_id"
+    t.integer  "piece_char_limit"
+    t.integer  "minimum_words"
+    t.boolean  "private"
   end
 
   create_table "users", :force => true do |t|

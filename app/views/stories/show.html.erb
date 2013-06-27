@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @story.title %>
-</p>
+<p id="story_title"><b><%= @story.title %></b></p>
 
+<div id="pieces">
+  <% @story.pieces.each do |piece| %>
+    <p><%= piece.text %></p>
+  <% end %>
+</div>
 
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+<p><%= link_to 'Edit', edit_story_path(@story) %> | <%= link_to 'Back', stories_path %></p>
