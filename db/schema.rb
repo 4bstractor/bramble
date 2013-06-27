@@ -42,9 +42,11 @@ ActiveRecord::Schema.define(:version => 20130614201451) do
     t.string   "quote"
     t.string   "hashed_password"
     t.string   "salt"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end

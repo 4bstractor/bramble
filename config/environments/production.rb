@@ -51,6 +51,9 @@ Bramble::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  # Default host for sending emails
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
   # Enable threaded mode
   # config.threadsafe!
 
