@@ -6,4 +6,12 @@ class Story < ActiveRecord::Base
   has_many :users, :through => :members
   has_many :members
   has_many :pieces
+
+  def ordered_pieces
+    pieces.order(:created_at)
+  end
+
+  def all_users
+    [user, *users]
+  end
 end
