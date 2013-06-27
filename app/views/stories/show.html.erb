@@ -8,4 +8,9 @@
   <% end %>
 </div>
 
+<%= content_tag "div", id: "post_data", data: { story_id: @story.id, user_id: current_user.id } do %>
+  <%= text_field_tag :post_text %>
+  <%= button_tag "Post", id: "post_button" %>
+<% end %>
+
 <p><%= link_to 'Edit', edit_story_path(@story) %> | <%= link_to 'Back', stories_path %></p>

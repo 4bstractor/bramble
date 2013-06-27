@@ -22,6 +22,9 @@ class StoriesController < ApplicationController
     end
   end
 
+  def add
+  end
+
   # GET /stories/new
   # GET /stories/new.xml
   def new
