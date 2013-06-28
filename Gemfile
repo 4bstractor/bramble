@@ -1,19 +1,20 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-
+# Postgres
 gem 'pg'
-
-gem 'machinist'
-
+# jQuery
 gem 'jquery-rails'
-
 # Use thin for development and test
 gem 'thin'
 # Use puma for production
 gem 'puma'
-# To use ActiveModel has_secure_password
+# Password encryption
 gem 'bcrypt-ruby', '~> 3.0.0'
+# Use rabl JSON templates instead of Jbuilder
+gem 'rabl'
+# Use haml for html templates
+gem 'haml'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,11 +31,13 @@ group :development do
   gem 'binding_of_caller'
   gem 'awesome_print'
   gem 'wirb'
-  gem 'faker'
 end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+# Gems for both test and development environments
+group :development, :test do
+  gem 'machinist'
+  gem 'faker'
+end
 
 # Deploy with Capistrano
 # gem 'capistrano'
