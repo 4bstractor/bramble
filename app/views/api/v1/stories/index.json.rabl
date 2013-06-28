@@ -1,4 +1,4 @@
-object @stories
+collection @stories, :root => "stories"
 attributes :id, :title, :piece_char_limit, :minimum_words, :created_at
 
 # Replace this with a check to see if its the users turn
