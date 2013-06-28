@@ -15,9 +15,12 @@ Bramble::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      # Authentication routes
       post 'users' => 'users#create', as: 'sign_up'
       post 'sessions' => 'sessions#create', as: 'sign_in'
       delete 'sessions' => 'sessions#destroy', as: 'sign_out'
+      # Stories routes
+      get 'stories' => 'stories#index', as: 'stories'
     end
   end
   # The priority is based upon order of creation:
