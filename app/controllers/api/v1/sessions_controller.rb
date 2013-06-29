@@ -4,21 +4,21 @@ class Api::V1::SessionsController < ApplicationController
   respond_to :json
 
   def create
-    user = User.find_by_identifier(params[:identifier])
-    if user && user.authenticate(params[:password])
+    user = User.find_by_identifier(params[:user][:identifier])
+    if user && user.authenticate(params[:user][:password])
       # Generate a new access token each login
       user.regenerate_access_token
       render :json => { 
         :success => true,
-	:access_token => user.access_token,
-	:info => "Signed In" },
-	:status => 200
+	      :access_token => user.access_token,
+	      :info => "Signed In" },
+	      :status => 200
     else
       render :json => {
         :success => false,
-	:access_token => nil,
-	:info => "Invalid Identifier Or Password" },
-	:status => 401 # TODO: Check this status return
+	      :access_token => nil,
+	      :info => "Invalid Identifier Or Password" },
+	      :status => 401 # TODO: Check this status return
     end
   end
 
@@ -27,14 +27,14 @@ class Api::V1::SessionsController < ApplicationController
     if current_user.regenerate_access_token
       render :json => {
         :success => true,
-	:info => "Signed Out" },
-	:status => 200
+	      :info => "Signed Out" },
+	      :status => 200
     else
       # May be unnecessary, also check the return status
       render :json => {
         :success => false,
-	:info => "Unknown Error Code A11" },
-	:status => 401
+	      :info => "Unknown Error Code A11" },
+	      :status => 401
     end
   end
 end
