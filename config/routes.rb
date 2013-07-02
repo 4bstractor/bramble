@@ -9,6 +9,10 @@ Bramble::Application.routes.draw do
   post 'users' => 'users#create', as: 'users'
   # Users profile action
   get 'users/me' => 'users#me', as: 'my'
+  # Home routes
+  get 'index' => 'home#index', as: 'index'
+  get 'about' => 'home#about', as: 'about'
+  get 'contact' => 'home#contact', as: 'contact'
 
   resources :stories
   resources :password_resets

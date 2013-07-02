@@ -1,0 +1,14 @@
+<h1>Bramble</h1>
+<p>Bramble is a web-app built for collaborative story creation.  Users can create private stories and invite their friends to collaborate or make public stories for the world to share.  If you want to write a story by yourself, you can even do that too!  The stories themselves are created using a turn-based strategy where each user contributes a piece before passing the story off to the next person.  Collaborators are limited to a certain amount or words or characters, specified by the stories creator, to keep the story moving.  Browse some public stories or create an account to start collaborating!</p>
+
+<pre>The site is still under-construction but will be fully operational shortly! Check back soon</pre>
+<hr/>
+
+<h3 style="text-align:center;">Top Public Stories</h3>
+
+<% Story.order("created_at DESC").each do |story| %>
+  <hr/>
+  <div class="story-header"><p><%= story.title %></p></div>
+  <p style="font-size:11px;"><%= story.user_number_text %></p>
+  <p><%= story.ordered_pieces.pluck(:text).join("  ") %></p>
+<% end %>
