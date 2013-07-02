@@ -4,4 +4,10 @@ class Api::V1::StoriesController < ApplicationController
   def index
     @stories = current_user.stories
   end
+
+  def create
+  end
+
+  def add
+  end
 end

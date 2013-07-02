@@ -21,6 +21,8 @@ Bramble::Application.routes.draw do
       delete 'sessions' => 'sessions#destroy', as: 'sign_out'
       # Stories routes
       get 'stories' => 'stories#index', as: 'stories'
+      post 'stories' => 'stories#create', as: 'stories'
+      post 'add' => 'stories#add', as: 'add_to_stories'
     end
   end
   # The priority is based upon order of creation:
