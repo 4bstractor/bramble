@@ -1,4 +1,4 @@
-body { background-color: #304225; color: #333; }
+body { background-color: #475866; color: #fff; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -12,9 +12,9 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #999; }
-a:hover { color: #fff; background-color:#000; }
+a { color: #aaa; }
+a:visited { color: #888; }
+a:hover { color: #fff; }
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -58,21 +58,21 @@ div.field, div.actions {
 
 /* Layout */
 #comm {
-  background-color:#EEDDBB;
+  background-color:#3d3d3d;
   border:1px solid black;
   border-radius:5px;
   padding:2px 20px;
 }
 
 #page {
-  background-color:#FFCC99;
+  background-color:#3d3d3d;
   border:1px solid black;
   border-radius:5px;
   padding:2px 20px;
 }
 
 #footer {
-  background-color:#DDCC99;
+  background-color:#3d3d3d;
   border:1px solid black;
   border-radius:5px;
   padding:2px 20px;
@@ -85,7 +85,7 @@ div.field, div.actions {
   border-radius: 5px;
   font-weight:bold;
   padding:8px 16px;
-  color: #ccc;
+  color: #aaa;
   text-decoration:none;
   font-size: 13px;
   font-family: arial, sans-serif;
