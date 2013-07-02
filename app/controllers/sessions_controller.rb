@@ -21,9 +21,9 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-	  cookies.delete(:auth_token)
 	  # Change the token after logout
 	  current_user.refresh_auth_token
+	  cookies.delete(:auth_token)
 		redirect_to root_url, :notice => "Logged Out!"
 	end
 end
