@@ -20,6 +20,8 @@ gem 'rabl'
 # Use haml for html templates
 gem 'haml'
 
+gem 'faker'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -40,7 +42,6 @@ end
 # Gems for both test and development environments
 group :development, :test do
   gem 'machinist'
-  gem 'faker'
 end
 
 # Deploy with Capistrano
