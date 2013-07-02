@@ -1,10 +1,13 @@
-<h1>Sign In</h1>
+<h2>Login</h2>
 
 <%= form_tag sessions_path do %>
-  <div class="field"><%= text_field_tag :identifier, params[:identifier], :placeholder => "Username Or Email" %></div>
-  <div class="field"><%= password_field_tag :password, nil, :placeholder => "Password" %></div>
-  <p><%= link_to "forgotten password?", new_password_reset_path %></p>
-  <div class="field"><label>Remember <%= check_box_tag :remember_me, 1, params[:remember_me] %></label></div>
+  <div class="field" style="float:left;margin-right:6px;"><%= text_field_tag :identifier, params[:identifier], :placeholder => " Username Or Email", :style => "width:144px;" %></div>
+  <div class="field" style="float:left;"><%= password_field_tag :password, nil, :placeholder => " Password", :style => "width:144px;" %></div>
+  <div class="clear"></div>
   <!-- #TODO: Make a new button for these actions -->
-  <div class="actions"><%= submit_tag "Sign In" %></div>
+  <div class="actions" style="float:left;margin-right:92px;"><%= submit_tag "Login" %></div>
+  <div class="field" style="float:left;"><label><%= check_box_tag :remember_me, 1, params[:remember_me] %> Remember Me</label></div>
+  <div class="clear"></div>
 <% end %>
+
+<p><%= link_to "Reset Password", new_password_reset_path %></p>

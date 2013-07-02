@@ -7,17 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="whole_page">
   <div id="comm">
-    <% if current_user %>
-      Signed in as <%= link_to current_user.email, my_path %>. Not You?
-      <%= link_to "Sign Out", sign_out_path, :method => :delete, :class => "brutton" %>
-    <% else %>
-      <%= link_to "Sign Up", sign_up_path, :class => "brutton" %> <%= link_to "Sign In", sign_in_path, :class => "brutton" %>
-    <% end %>
+    <div style="float:left;">
+      <%= link_to "Home", index_url %>
+      <% if current_user %>
+        | <%= link_to "Stories", stories_url %>
+      <% end %>
+    </div>
+
+    <div id="member_links">
+      <% if current_user %>
+        Signed in as <%= link_to current_user.email, my_path %>. Not You?
+        <%= link_to "Sign Out", sign_out_path, :method => :delete %>
+      <% else %>
+        <%= link_to "Login", sign_in_path %> / <%= link_to "Register", sign_up_path %>
+      <% end %>
+    </div>
+
+    <div class="clear"></div>
 
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <hr/>
+      <%= content_tag :div, msg, :class => "comm_message", :id => "flash_#{name}" %>
     <% end %>
+
+    <div class="clear"></div>
   </div>
   <!--TODO: Add button styles, change the formatting for the top and bottom bars -->
 
@@ -30,7 +45,8 @@
   <br/>
 
   <div id="footer">
-    <%= link_to "Home", root_path, :class => "brutton" %>
+    <p style="margin:0px;font-size:10px;text-align:right;color:#888">Powered by Ruby on Rails</p>
+  </div>
   </div>
 </body>
 </html>

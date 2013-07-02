@@ -3,9 +3,7 @@
 <p id="story_title"><b><%= @story.title %></b></p>
 
 <div id="pieces">
-  <% @story.pieces.each do |piece| %>
-    <p><%= piece.text %></p>
-  <% end %>
+  <%= @story.formatted_text %>
 </div>
 
 <p><%= link_to 'Edit', edit_story_path(@story) %> | <%= link_to 'Back', stories_path %></p>

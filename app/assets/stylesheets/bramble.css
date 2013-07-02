@@ -1,4 +1,8 @@
-body { background-color: #475866; color: #fff; }
+body { 
+  background: #ddd;
+  color: #000;
+  padding: 0% 22%;
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -12,17 +16,35 @@ pre {
   font-size: 11px;
 }
 
-a { color: #aaa; }
-a:visited { color: #888; }
-a:hover { color: #fff; }
+hr {
+  background-color: #ccc;
+  color: #ccc;
+  height: 1px;
+  border: 0px;
+}
+
+a { color: #444; text-decoration: none; }
+a:visited { color: #555; }
+a:hover { color: #111; }
 
 div.field, div.actions {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 #notice {
   color: green;
 }
+
+.comm_message {
+  float:left;
+  text-align:center;
+}
+
+#flash_alert {
+  color: #700;
+}
+
+.clear { clear: both; }
 
 /* Error Display */
 .field_with_errors {
@@ -58,24 +80,34 @@ div.field, div.actions {
 
 /* Layout */
 #comm {
-  background-color:#3d3d3d;
-  border:1px solid black;
-  border-radius:5px;
-  padding:2px 20px;
+  background-color: #fff;
+  border: 2px solid #e6ffe6;
+  border-radius: 4px;
+  padding: 2px 20px;
 }
 
 #page {
-  background-color:#3d3d3d;
-  border:1px solid black;
-  border-radius:5px;
-  padding:2px 20px;
+  background-color: #fff;
+  border: 2px solid #e6ffe6;
+  border-radius: 4px;
+  padding: 2px 20px;
 }
 
 #footer {
-  background-color:#3d3d3d;
-  border:1px solid black;
-  border-radius:5px;
-  padding:2px 20px;
+  background-color :#fff;
+  border: 2px solid #e6ffe6;
+  border-radius: 4px;
+  padding: 2px 20px;
+}
+
+.inside_box {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#member_links {
+  float: right;
 }
 
 /* Buttons */
@@ -96,4 +128,19 @@ div.field, div.actions {
 .brutton:hover {
   background: #3d3d3d; /* Old browsers */
   color:#fff;
+}
+
+.story-header {
+  border: 1px solid #ccc;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-weight:bold;
+  padding:0px 8px;
+  color: #000;
+  margin-bottom:10px;
+  text-decoration:none;
+  font-size: 13px;
+  font-family: arial, sans-serif;
+
+  background: #daefd6; /* Old browsers */
 }
