@@ -11,6 +11,14 @@ class Story < ActiveRecord::Base
     pieces.order(:created_at)
   end
 
+  def formatted_text
+    ordered_pieces.pluck(:text).join(" ")
+  end
+
+  def user_number_text
+    all_users.count == 1 ? "#{all_users.count} User Collaborating" : "#{all_users.count} Users Collaborating"
+  end
+
   def all_users
     [user, *users]
   end
