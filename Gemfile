@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
+gem 'rails_12factor', group: :production
+
 gem 'rails', '3.2.11'
 # Postgres
 gem 'pg'
