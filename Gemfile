@@ -10,7 +10,7 @@ gem 'pg'
 # jQuery
 gem 'jquery-rails'
 # Use thin for development and test
-gem 'thin'
+#gem 'thin'
 # Use puma for production
 gem 'puma'
 # Password encryption
