@@ -1,51 +1,56 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.0.0'
+ruby '2.7.5'
 
-gem 'rails_12factor', group: :production
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', '~> 1.4'
+# Use Puma as the app server
+gem 'puma', '~> 5.0'
+# Use SCSS for stylesheets
+gem 'sass-rails', '>= 6'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 5.0'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.7'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Use Active Model has_secure_password
+gem 'bcrypt', '~> 3.1.13'
 
-gem 'rails', '3.2.11'
-# Postgres
-gem 'pg'
-# jQuery
-gem 'jquery-rails'
-# Use thin for development and test
-#gem 'thin'
-# Use puma for production
-gem 'puma'
-# Password encryption
-gem 'bcrypt-ruby', '~> 3.0.0'
-# Use rabl JSON templates instead of Jbuilder
-gem 'rabl'
-# Use haml for html templates
-gem 'haml'
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
 
-gem 'faker'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.4', require: false
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-  # Add js runtime gem here if needed
-end
-
-# Gems used only in development
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'awesome_print'
-  gem 'wirb'
-end
-
-# Gems for both test and development environments
 group :development, :test do
-  gem 'machinist'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :development do
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 4.1.0'
+  # Display performance information such as SQL time and flame graphs for each request in your browser.
+  # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
+  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'listen', '~> 3.3'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 3.26'
+  gem 'selenium-webdriver'
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'webdrivers'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

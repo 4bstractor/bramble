@@ -1,5 +1,5 @@
-class UserMailer < ActionMailer::Base
-  # TODO: Change this
+class UserMailer < ApplicationMailer
+	# TODO: Change this
   default from: "from@example.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml

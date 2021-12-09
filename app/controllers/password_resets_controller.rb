@@ -1,5 +1,6 @@
 class PasswordResetsController < ApplicationController
-  skip_before_filter :authenticate!, :only => [:new, :create, :edit, :update]
+	skip_before_action :authenticate!, :only => [:new, :create, :edit, :update]
+
   def new
   end
 

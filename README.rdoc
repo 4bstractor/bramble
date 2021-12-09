@@ -1,7 +1,0 @@
-	Bramble is a web application that lets users collaborate to create stories in a turn based way.
-
-	Planned Features:
-		-Users can choose a custom text color / font
-		-Some stories can have pieces votes on or judged according to a rule set for a score. (Just thought of this, not too serious about it)
-		-Change story options to aformentioned rulesets for flexibility
-		-A rule or story mode where pieces contributed have to use a certain word

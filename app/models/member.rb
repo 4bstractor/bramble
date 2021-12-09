@@ -1,4 +1,4 @@
-class Member < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :story
+class Member < ApplicationRecord
+	belongs_to :user
+	belongs_to :story
 end

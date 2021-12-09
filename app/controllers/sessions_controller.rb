@@ -1,11 +1,10 @@
 class SessionsController < ApplicationController
-  skip_before_filter :authenticate!, :only => [:new, :create]
+	skip_before_action :authenticate!, :only => [:new, :create]
 
   def new
-  	# Template Pointer
-	end
+  end
 
-	def create
+  def create
 	  user = User.find_by_identifier(params[:identifier])
 	  if user && user.authenticate(params[:password])
 	  	if params[:remember_me]

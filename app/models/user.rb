@@ -1,8 +1,6 @@
 require 'bcrypt'
 
-class User < ActiveRecord::Base
-  attr_accessible :email, :username, :quote, :salt, :password, :password_confirmation
-
+class User < ApplicationRecord
   attr_accessor :password
 
   before_save :hash_password
@@ -13,9 +11,9 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true
   validates :email, :uniqueness => true
 
-  has_many :stories
+  has_many :stories, class_name: 'Story', foreign_key: :author_id
   has_many :members
-  has_many :member_of_stories, :through => :members, :source => :story
+  has_many :memberships, :through => :members
 
   # Scope to find a user by either identifier
   def self.find_by_identifier(identifier)

@@ -1,10 +1,10 @@
-class Story < ActiveRecord::Base
-  validates_presence_of :title
+class Story < ApplicationRecord
+	validates_presence_of :title
   validates_presence_of :user_id
 
-  belongs_to :user
-  has_many :users, :through => :members
+  belongs_to :author, class_name: 'User'
   has_many :members
+  has_many :users, :through => :members
   has_many :pieces
 
   def ordered_pieces
@@ -20,6 +20,6 @@ class Story < ActiveRecord::Base
   end
 
   def all_users
-    [user, *users]
+    [author, *users]
   end
 end

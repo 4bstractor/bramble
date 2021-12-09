@@ -1,7 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   title: MyString
+  piece_char_limit: 1
+  minimum_words: 1
+  private: false
 
 two:
   title: MyString
+  piece_char_limit: 1
+  minimum_words: 1
+  private: false
